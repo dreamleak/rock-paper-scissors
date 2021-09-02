@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors
 
-This project focuses on well-known game of [Named Link](https://en.wikipedia.org/wiki/Rock_paper_scissors "Rock, Paper Scissors") where vanilla Javascript is used. The player (client-side user) plays against the computer through five rounds.
+This project focuses on well-known game of [Rock, Paper, Scissors - Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors "Rock, Paper Scissors") where vanilla Javascript is used. The player (client-side user) plays against the computer through five rounds.
 
 As my first programming language, I perceive Javascript as this whimsical entity. The labyrinth of information; both abstract and conceptually fresh to my brain, have been quite eye-opening as a learner, and have personally made me appreciate the programming realm way more than I have before. I've covered over vital data in regards to Javascript's subprograms called functions, which are highly prominent throughout the language.
 
