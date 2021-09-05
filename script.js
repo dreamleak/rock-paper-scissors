@@ -2,19 +2,17 @@
         // paper beats rock, but loses to scissors.
         // scissors beats paper, but loses to rock.
 
-        
-
-        // computer's automatic turn.
-        function computerPlay() {
-            let compChoices = Math.floor(Math.random() * 3);
-            if (compChoices === 0) {
-                return 'rock';
-            } else if (compChoices === 1) {
-                return 'paper';
-            } else {
-                return 'scissors';
-            }
-        }
+      // computer's automatic turn.
+    //   function computerPlay() {
+    //     let compChoices = Math.floor(Math.random() * 3);
+    //     if (compChoices === 0) {
+    //         return 'rock';
+    //     } else if (compChoices === 1) {
+    //         return 'paper';
+    //     } else {
+    //         return 'scissors';
+    //     }
+    // }
 
         // // executes five rounds between the player and computer.
         // function playRound(playerSelection, computerSelection) {
@@ -73,24 +71,61 @@
         //     console.log("Computer's score = " + compScore);
         // };
 
-        function playRound() {
-        // rock 
-        const rockButton = document.querySelector('#rock');
-            rockButton.addEventListener('click', () => {
-            console.log('rock');
-        });
 
-        // paper 
-        const paperButton = document.querySelector('#paper');
-            paperButton.addEventListener('click', () => {
-            console.log('paper');
-        });
-       
-        // scissors
-        const scissorsButton = document.querySelector('#scissors');
-            scissorsButton.addEventListener('click', () => {
-            console.log('scissors');
-        });
+        const playerSelectionDisplay = document.getElementById('player-choice');
+        const computerSelectionDisplay = document.getElementById('computer-choice');
+        const getResultsDisplay = document.getElementById('result-scores');
+        const possibleChoices = document.querySelectorAll('button');
+        let playerChoice;
+        let computerChoice;
+        let getResults;
+
+  function playRound () {
+        possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+            playerChoice = e.target.id;
+            playerSelectionDisplay.innerHTML = playerChoice;
+            computerPlay();
+            scoreBoard();
+        }));
+
+        function computerPlay() {
+            // automates computer's every move.
+            const randomValue = Math.floor(Math.random() * 3);
+
+            if (randomValue === 0) {
+                computerChoice = 'rock';
+            }
+             else if (randomValue === 1) {
+                computerChoice = 'paper';
+            } else { 
+                computerChoice = 'scissors';
+            }
+            computerSelectionDisplay.textContent = computerChoice;
+     }
+
+    function scoreBoard() {
+      if (playerChoice === computerChoice) {
+            getResults = 'Draw! Rematch?';
+            }
+      if (playerChoice === 'paper' && computerChoice === 'rock') {
+            getResults = 'You win!';      
+        }
+      if (playerChoice === 'paper' && computerChoice === 'scissors') {
+            getResults = 'You lose! Computer wins!';
+      } 
+      if (playerChoice === 'rock' && computerChoice === 'scissors') {
+          getResults = "You win!";
+      }
+      if (playerChoice === 'rock' && computerChoice === 'paper') {
+          getResults = 'You lose! Computer wins!';
+      }
+      if (playerChoice === 'scissors' && computerChoice === 'paper') {
+          getResults = 'You win!';
+      }
+      if (playerChoice === 'scissors' && computerChoice === 'rock') {
+          getResults = 'You lose! Computer wins!';
+      }
+        getResultsDisplay.textContent = getResults;
     }
-
-    console.log(playRound());
+}
+ console.log(playRound());
