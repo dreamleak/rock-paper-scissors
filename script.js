@@ -14,64 +14,73 @@ const winningScore = 5;
 
 
 function playRound() {
-    possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
-        playerChoice = e.target.id;
-        playerSelectionDisplay.textContent = playerChoice;
+  possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    playerChoice = e.target.id;
+    playerSelectionDisplay.textContent = playerChoice;
 
-        function scoreBoard() {
-            if (!gameOver && getResults === "You win!") {
-                playerScore++;
-                if (playerScore === winningScore) {
-                    gameOver = true;
-                } else if (getResults === "You lose! Computer wins!") {
-                    playerScore--;
-                } else {
-                    gameOver = false;
-                }
-                playerScoreDisplay.textContent = playerScore;
-            }
-        if (!gameOver && getResults === "You lose! Computer wins!") {
-            computerScore++;
-            if (computerScore === winningScore) {
-                gameOver = true;
-            } else if (getResults === "You win!") {
-                computerScore--;
-            } else {
-                gameOver = false;
-            }
-            computerScoreDisplay.textContent = computerScore;
-        }
-    }
-        computerPlay();
-        resultTracker();
-        scoreBoard();
-    }));
-
-    function computerPlay() {
-        // automates computer's every move.
-        const randomValue = Math.floor(Math.random() * 3);
-
-        if (randomValue === 0) {
-            computerChoice = 'rock';
-        } else if (randomValue === 1) {
-            computerChoice = 'paper';
+    function scoreBoard() {
+      if (!gameOver && getResults === 'You win!') {
+        playerScore++;
+        if (playerScore === winningScore) {
+          gameOver = true;
+          getResultsDisplay.textContent = 'Congratulations! You\'re the winner!';
+        } else if (getResults === 'You lose! Computer wins!') {
+          playerScore--;
         } else {
-            computerChoice = 'scissors';
+          gameOver = false;
         }
-        computerSelectionDisplay.textContent = computerChoice;
+        playerScoreDisplay.textContent = playerScore;
+      }
+      if (!gameOver && getResults === 'You lose! Computer wins!') {
+        computerScore++;
+        if (computerScore === winningScore) {
+          gameOver = true;
+          getResultsDisplay.textContent = 'Game over! Machines rule the world!';
+        } else if (getResults === 'You win!') {
+          computerScore--;
+        } else {
+          gameOver = false;
+        }
+        computerScoreDisplay.textContent = computerScore;
+      }
     }
+    computerPlay();
+    resultTracker();
+    scoreBoard();
+  }));
 
-    function resultTracker() {
-        if (playerChoice === computerChoice) {
-            getResults = 'Draw! Rematch?';
-        }
-        if ((playerChoice === 'paper' && computerChoice === 'rock') || (playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper')) {
-            getResults = 'You win!';
-        }
-        if ((playerChoice === 'paper' && computerChoice === 'scissors') || (playerChoice === 'rock' && computerChoice === 'paper') || (playerChoice === 'scissors' && computerChoice === 'rock')) {
-            getResults = 'You lose! Computer wins!';
-        }
-        getResultsDisplay.textContent = getResults;
+  function computerPlay() {
+    // automates computer's every move.
+    const randomValue = Math.floor(Math.random() * 3);
+
+    if (randomValue === 0) {
+      computerChoice = 'rock';
+    } else if (randomValue === 1) {
+      computerChoice = 'paper';
+    } else {
+      computerChoice = 'scissors';
     }
+    computerSelectionDisplay.textContent = computerChoice;
+  }
+
+  function resultTracker() {
+    if (playerChoice === computerChoice) {
+      getResults = 'It\'s a tie!';
+    }
+    if ((playerChoice === 'paper' && computerChoice === 'rock') || (playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper')) {
+      getResults = 'You win!';
+    }
+    if ((playerChoice === 'paper' && computerChoice === 'scissors') || (playerChoice === 'rock' && computerChoice === 'paper') || (playerChoice === 'scissors' && computerChoice === 'rock')) {
+      getResults = 'You lose! Computer wins!';
+    }
+    getResultsDisplay.textContent = getResults;
+  }
+
+  //     disable button click once either player or computer has scored 5 points.
+  //     function disableButtonClick() {
+  //     possibleChoices.removeEventListener('click', () => {
+  //     if (playerScore === winningScore || computerScore === winningScore) possibleChoices.disabled = true;
+  //        });   
 }
-    playRound();
+
+playRound();
