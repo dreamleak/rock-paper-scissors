@@ -17,7 +17,7 @@ function playRound() {
   possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     playerChoice = e.target.id;
     playerSelectionDisplay.textContent = playerChoice;
-
+  
     function scoreBoard() {
       if (!gameOver && getResults === 'You win!') {
         playerScore++;
@@ -44,9 +44,20 @@ function playRound() {
         computerScoreDisplay.textContent = computerScore;
       }
     }
+
+    function endGame() {
+      if (playerScore === winningScore || computerScore === winningScore) {
+        // disable button event when condition is met.
+      document.getElementById('rock').disabled = true;
+      document.getElementById('paper').disabled = true;
+      document.getElementById('scissors').disabled = true;
+    }
+  }
+
     computerPlay();
     resultTracker();
     scoreBoard();
+    endGame();
   }));
 
   function computerPlay() {
@@ -74,13 +85,7 @@ function playRound() {
       getResults = 'You lose! Computer wins!';
     }
     getResultsDisplay.textContent = getResults;
+    }
   }
-
-  //     disable button click once either player or computer has scored 5 points.
-  //     function disableButtonClick() {
-  //     possibleChoices.removeEventListener('click', () => {
-  //     if (playerScore === winningScore || computerScore === winningScore) possibleChoices.disabled = true;
-  //        });   
-}
 
 playRound();
