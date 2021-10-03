@@ -1,0 +1,73 @@
+/* ===========
+  global styles
+============= */
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===========
+  typography
+============= */
+
+span {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}
+/* ===========
+  layout
+============= */
+
+.game-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 2em;
+    border: 2px solid purple;
+}
+
+.playround-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1.5em;
+    padding: 2em;
+    border: 2px solid purple;
+}
+
+.inner-wrapper { 
+  padding: 2em;
+  border: 2px solid purple;
+}
+
+
+.result-container {
+    text-align: center;
+    padding: 1.5em;
+    flex: 1;
+}
+
+/* =========
+  images
+  ========== */
+
+
+/* ===========
+  components
+============= */
+
