@@ -11,8 +11,8 @@ html {
   }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* ===========
@@ -20,8 +20,8 @@ body {
 ============= */
 
 span {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 h2 {
@@ -32,22 +32,22 @@ h2 {
 ============= */
 
 .game-container {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5em;
-    padding: 2em;
-    border: 2px solid purple;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 2em;
+  border: 2px solid purple;
 }
 
 .playround-container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 1.5em;
-    padding: 2em;
-    border: 2px solid purple;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 6em;
+  padding: 2em;
+  border: 2px solid purple;
 }
 
 .inner-wrapper { 
@@ -57,9 +57,9 @@ h2 {
 
 
 .result-container {
-    text-align: center;
-    padding: 1.5em;
-    flex: 1;
+  text-align: center;
+  padding: 1.5em;
+  flex: 1;
 }
 
 /* =========
