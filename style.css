@@ -49,7 +49,6 @@ span {
   font-size: 1.5rem;
   color: rgb(177, 145, 255);
   text-shadow: 2px 2px 1px rgb(52, 47, 59);
-  /* color: rgb(101, 255, 0);  change in js when score is 5*/ 
 }
 
 .inner-wrapper>#show-results {
@@ -67,9 +66,11 @@ span {
 
 button {
   font-family: 'Amarante', cursive;
-  font-size: 1rem;
+  font-size: 1.375em;
   font-weight: 600;
   line-height: 1.5;
+  text-transform: uppercase;
+  color: rgb(87, 71, 128);
 }
 /* ===========
   layout
@@ -126,8 +127,24 @@ button {
 
 button {
 display: block;
+border: none;
 padding: 1em 2em;
 background-color: rgb(224, 221, 207);
-border-radius: .5em;
-outline: 2px dotted;
+border-radius: .2em .2em;
+}
+
+button:hover {
+  animation: pulse .5s;
+  background-color: rgb(119, 102, 160);
+  color:rgb(196, 196, 196);
+  box-shadow: 0em .2em .4em;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
