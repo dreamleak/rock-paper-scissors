@@ -1,4 +1,11 @@
 /* ===========
+  google fonts
+============= */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+
+/* ===========
   global styles
 ============= */
 
@@ -25,7 +32,44 @@ span {
 }
 
 h2 {
+  font-family: 'Amarante', cursive;
   text-align: center;
+  font-size: 2rem;
+  color: rgb(224, 221, 207);
+}
+
+.result-container,
+span {
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+}
+
+#player-points,
+#computer-points {
+  font-size: 1.5rem;
+  color: rgb(177, 145, 255);
+  text-shadow: 2px 2px 1px rgb(52, 47, 59);
+  /* color: rgb(101, 255, 0);  change in js when score is 5*/ 
+}
+
+.inner-wrapper>#show-results {
+  color: rgb(52, 47, 59);
+  background-color: rgb(201, 186, 240);
+  border-radius: .5em .5em;
+  padding: 1em;
+  box-shadow: 0em .5em .5em;
+}
+
+#show-results {
+  font-size: 1.2em;
+  color:rgb(52, 47, 59);
+}
+
+button {
+  font-family: 'Amarante', cursive;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 /* ===========
   layout
@@ -38,7 +82,6 @@ h2 {
   justify-content: center;
   gap: 1.5em;
   padding: 2em;
-  border: 2px solid purple;
 }
 
 .playround-container {
@@ -46,21 +89,31 @@ h2 {
   flex-flow: row nowrap;
   align-items: center;
   gap: 6em;
+}
+
+.playround-container,
+.result-container,
+.button-container {
+  background-color: rgb(85, 80, 92);
+  border-radius: .5em .5em;
+  box-shadow: 0em .2em .4em;
   padding: 2em;
-  border: 2px solid purple;
 }
 
 .inner-wrapper { 
   padding: 2em;
-  border: 2px solid purple;
 }
 
-
 .result-container {
-  text-align: center;
   padding: 1.5em;
   flex: 1;
 }
+
+.button-container {
+  display: flex;
+  gap: 1.5em;
+}
+
 
 /* =========
   images
@@ -71,3 +124,10 @@ h2 {
   components
 ============= */
 
+button {
+display: block;
+padding: 1em 2em;
+background-color: rgb(224, 221, 207);
+border-radius: .5em;
+outline: 2px dotted;
+}
