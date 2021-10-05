@@ -25,6 +25,7 @@ function playRound() {
             gameOver = true;
             getResultsDisplay.textContent =
               'Congratulations! You\'re the winner!';
+              playerScoreDisplay.style.color = 'rgb(101, 255, 0)'; // winning score changes to green.
           } else if (getResults === 'You lose! Computer wins!') {
             playerScore--;
           } else {
@@ -38,6 +39,7 @@ function playRound() {
             gameOver = true;
             getResultsDisplay.textContent =
               'Game over! Machines rule the world!';
+              computerScoreDisplay.style.color = 'rgb(101, 255, 0)'; // winning score changes to green.
           } else if (getResults === 'You win!') {
             computerScore--;
           } else {
