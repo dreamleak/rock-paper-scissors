@@ -18,6 +18,7 @@ function playRound() {
       playerChoice = e.target.id;
       playerSelectionDisplay.textContent = playerChoice;
 
+
       function scoreBoard() {
         if (!gameOver && getResults === 'You win!') {
           playerScore++;
@@ -62,6 +63,7 @@ function playRound() {
       resultTracker();
       scoreBoard();
       endGame();
+      replaceChoiceTextWithEmoji();
       restartGame();
     })
   );
@@ -100,6 +102,22 @@ function playRound() {
     }
     getResultsDisplay.textContent = getResults;
   }
+}
+
+  function replaceChoiceTextWithEmoji() {
+    if (playerChoice === 'rock')
+    playerSelectionDisplay.textContent = '🪨';
+    if (playerChoice === 'paper')
+    playerSelectionDisplay.textContent = '📄';
+    if (playerChoice === 'scissors')
+    playerSelectionDisplay.textContent = '✂️';
+
+    if (computerChoice === 'rock')
+    computerSelectionDisplay.textContent = '🪨';
+    if (computerChoice === 'paper')
+    computerSelectionDisplay.textContent = '📄';
+    if (computerChoice === 'scissors')
+    computerSelectionDisplay.textContent = '✂️';
 }
 
   function restartGame() {
